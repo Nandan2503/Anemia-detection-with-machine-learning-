@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anemiasense - AI-Powered Anemia Management</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    
+    <!-- Custom CSS -->
+    <style>
+        body {
+            background-color: #f4f6f9;
+            font-family: 'Arial', sans-serif;
+            color: #333;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 40px;
+            margin-top: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-weight: bold;
+            color: #4b6584;
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            border: 2px solid #ced6e0;
+            border-radius: 5px;
+            padding: 10px;
+            font-size: 16px;
+            color: #2f3542;
+        }
+
+        .form-control:focus {
+            border-color: #4b6584;
+            box-shadow: none;
+        }
+
+        .btn-primary {
+            background-color: #4b6584;
+            border-color: #4b6584;
+            padding: 10px 20px;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 5px;
+            transition: background-color 0.3s ease; /* Add a smooth transition for hover effect */
+        }
+
+        .btn-primary:hover {
+            background-color: #2d98da;
+            border-color: #2d98da;
+        }
+
+        label {
+            font-weight: bold;
+            color: #57606f;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            color: #a4b0be;
+        }
+
+        footer a {
+            color: #4b6584;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .intro-text {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2 class="text-center">Anemiasense - AI-Powered Anemia Management</h2>
+        <p class="intro-text">Enter the details below to receive an AI-based assessment for potential anemia.</p>
+
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label for="Gender">Gender (0 for Female, 1 for Male)</label>
+                <input type="number" step="0.01" class="form-control" id="Gender" name="Gender" placeholder="Enter Gender" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Age">Age</label>
+                <input type="number" step="0.01" class="form-control" id="Age" name="Age" placeholder="Enter Age" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Hemoglobin">Hemoglobin Level (g/dL)</label>
+                <input type="number" step="0.01" class="form-control" id="Hemoglobin" name="Hemoglobin" placeholder="Enter Hemoglobin Level" required>
+            </div>
+
+            <div class="form-group">
+                <label for="RedBloodCells">Red Blood Cell Count (million/µL)</label>
+                <input type="number" step="0.01" class="form-control" id="RedBloodCells" name="RedBloodCells" placeholder="Enter RBC Count" required>
+            </div>
+
+            <div class="form-group">
+                <label for="IronLevel">Iron Level (µg/dL)</label>
+                <input type="number" step="0.01" class="form-control" id="IronLevel" name="IronLevel" placeholder="Enter Iron Level" required>
+            </div>
+
+            <div class="form-group">
+                <label for="Symptoms">Symptoms Severity (0 for None, 1 for Mild, 2 for Severe)</label>
+                <input type="number" step="0.01" class="form-control" id="Symptoms" name="Symptoms" placeholder="Enter Symptoms Severity" required>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">Submit for Assessment</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>© 2024 Anemiasense | <a href="#">Privacy Policy</a></p>
+    </footer>
+
+    <!-- Bootstrap JS, Popper.js, and jQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
